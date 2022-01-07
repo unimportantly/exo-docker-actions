@@ -1,0 +1,17 @@
+name: Push workflow
+
+on:
+  push:
+
+
+jobs:
+  test-unitaire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: récupération repo
+        uses: actions/checkout@v2
+      - name: récupération node
+        uses: actions/setup-node@v2
+          with:
+            node-version: 16
+      - run: npm test
