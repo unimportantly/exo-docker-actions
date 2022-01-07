@@ -8,7 +8,7 @@ on:
 jobs:
   build-app:
     runs-on: ubuntu-latest
-    steps:
+    steps: # here we need to get the repo & node so that we can build the app 
       - name: récupération repo
         uses: actions/checkout@v2
       - name: récupération node
@@ -20,7 +20,7 @@ jobs:
   build-docker:
     needs: build-app
     runs-on: ubuntu-latest
-    steps:
+    steps: # here we need to get repo, node & docker. then we log into docker then build & push our image to the hub
       - name: recup repo
         uses: actions/checkout@v2
       - name: recup node
